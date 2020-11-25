@@ -1,0 +1,48 @@
+﻿<html>
+<head>
+<title>test</title>
+</head>
+<body background="gao.png">
+<p id="id01" style="height:400">メジャースケールを覚えよう</p>
+<p id="id02"></p>
+<input type="button" value="スタート" style="width:300px;height:180"/ onclick="answer(this);">
+<script type="text/javascript">
+<!--
+var ha = new Array(13);
+var rand, rand2;
+ha = ['C','F','B♭','E♭','A♭','D♭','G♭','F♯','B','E','A','D','G'];
+var ha2 = [
+			['C','D','E','F','G','A','B'],
+			['F','G','A','B♭','C','D','E'],
+			['B♭','C','D','E♭','F','G','A'],
+			['E♭','F','G','A♭','B♭','C','D',],
+			['A♭','B♭','C','D♭','E♭','F','G',],
+			['D♭','E♭','F','G♭','A♭','B♭','C'],
+			['G♭','A♭','B♭','B','D♭','E♭','F'],
+			['F♯','G♯','A♯','B','C♯','D♯','F'],
+			['B','C♯','D♯','E','F♯','G♯','A♯'],
+			['E','F♯','G♯','A','B','C♯','D♯'],
+			['A','B','C♯','D','E','F♯','G♯'],
+			['D','E','F♯','G','A','B','C♯'],
+			['G','A','B','C','D','E','F♯']
+		  ];
+		  
+document.body.style.fontSize = 50;
+function answer(arg) { 
+	if(arg.value == "スタート" || arg.value == "もう一度"){
+		arg.value = "答え";
+		rand = Math.floor(Math.random() * 100 % 13);
+		rand2 = Math.floor(Math.random() * 10 % 7);
+		document.getElementById('id01').innerHTML = ha[rand]+"メジャーの";
+		document.getElementById('id02').innerHTML = rand2+1+"度は？";
+	}
+	else if(arg.value == "答え"){
+		arg.value = "もう一度";
+		document.getElementById('id01').innerHTML = ha2[rand][rand2];
+		document.getElementById('id02').innerHTML = "です。";
+	}
+}
+// -->
+</script>
+</body>
+</thml>
